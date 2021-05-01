@@ -1,0 +1,3 @@
+- **create-domain.ps1** will install a new domain in a new forest called contoso.com
+- **domain-prepare.ps1** will create OU,users,groups,etc. aligned with the exercises
+- **domain-prepare.json** the config file for the above .ps1

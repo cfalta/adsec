@@ -1,0 +1,212 @@
+{
+    "ou": [
+      {
+          "Name":  "company",
+          "DistinguishedName":  ""
+      },
+      {
+          "Name":  "User",
+          "DistinguishedName":  "OU=company"
+      },
+      {
+          "Name":  "Computer",
+          "DistinguishedName":  "OU=company"
+      },
+      {
+          "Name":  "Groups",
+          "DistinguishedName":  "OU=company"
+      },
+      {
+          "Name":  "DomainUser",
+          "DistinguishedName":  "OU=User,OU=company"
+      },
+      {
+          "Name":  "ServiceAccounts",
+          "DistinguishedName":  "OU=User,OU=company"
+      },
+      {
+          "Name":  "Admins",
+          "DistinguishedName":  "OU=User,OU=company"
+      },
+      {
+          "Name":  "Client",
+          "DistinguishedName":  "OU=Computer,OU=company"
+      },
+      {
+          "Name":  "Server",
+          "DistinguishedName":  "OU=Computer,OU=company"
+      }
+  ],
+   "user": [
+      {
+          "UserPrincipalName":  "john",
+          "SamAccountName":  "john",
+          "Name":  "john",
+          "OU":  "OU=DomainUser,OU=User,OU=company",
+          "DisplayName":  "John Doe",
+          "Password":  "P@ssw0rd"
+      },
+      {
+          "UserPrincipalName":  "taskservice",
+          "SamAccountName":  "taskservice",
+          "Name":  "taskservice",
+          "OU":  "OU=ServiceAccounts,OU=User,OU=company",
+          "DisplayName":  "taskservice",
+          "Password":  "Amsterdam2015"
+      },
+      {
+          "UserPrincipalName":  "cnorris",
+          "SamAccountName":  "cnorris",
+          "Name":  "cnorris",
+          "OU":  "OU=Admins,OU=User,OU=company",
+          "DisplayName":  "Chuck Norris",
+          "Password":  "AwesomeRoundHouseKickingPassword!"
+      },
+      {
+          "UserPrincipalName":  "blee",
+          "SamAccountName":  "blee",
+          "Name":  "blee",
+          "OU":  "OU=Admins,OU=User,OU=company",
+          "DisplayName":  "Bruce Lee",
+          "Password":  "TekkenIsAwesome!"
+      },
+      {
+        "UserPrincipalName":  "bwillis",
+        "SamAccountName":  "bwillis",
+        "Name":  "bwillis",
+        "OU":  "OU=Admins,OU=User,OU=company",
+        "DisplayName":  "Bruce Willis",
+        "Password":  "NakatomiPlaza1"
+    },
+      {
+          "UserPrincipalName":  "svc.backup",
+          "SamAccountName":  "svc.backup",
+          "Name":  "svc.backup",
+          "OU":  "OU=ServiceAccounts,OU=User,OU=company",
+          "DisplayName":  "Backup Service",
+          "Password":  "Amsterdam2016"
+      }
+  ],
+  "GroupAdd" : [
+      {
+          "Name": "Helpdesk Admins",
+          "Scope": "Global",
+          "Category": "Security",
+          "Description": "Senior members of helpdesk",
+          "OU":"OU=Groups,OU=company"
+      },
+      {
+        "Name": "Helpdesk",
+        "Scope": "Global",
+        "Category": "Security",
+        "Description": "Members of helpdesk",
+        "OU":"OU=Groups,OU=company"
+      },
+      {
+          "Name": "Finance",
+          "Scope": "Global",
+          "Category": "Security",
+          "Description": "Finance Department",
+          "OU":"OU=Groups,OU=company"
+      },
+      {
+          "Name": "HR",
+          "Scope": "Global",
+          "Category": "Security",
+          "Description": "HR Department",
+          "OU":"OU=Groups,OU=company"
+      },
+      {
+          "Name": "IT",
+          "Scope": "Global",
+          "Category": "Security",
+          "Description": "IT Department",
+          "OU":"OU=Groups,OU=company"
+      },
+      {
+          "Name": "Logistics",
+          "Scope": "Global",
+          "Category": "Security",
+          "Description": "Logistics Department",
+          "OU":"OU=Groups,OU=company"
+      },
+      {
+          "Name": "Production",
+          "Scope": "Global",
+          "Category": "Security",
+          "Description": "Production Department",
+          "OU":"OU=Groups,OU=company"
+      },
+      {
+          "Name": "Management",
+          "Scope": "Global",
+          "Category": "Security",
+          "Description": "Senior Management",
+          "OU":"OU=Groups,OU=company"
+      }
+  ],
+  "GroupMember" : [
+      {
+          "Group": "Domain Admins",
+          "Member": "cnorris"
+      },
+      {
+        "Group": "Protected Users",
+        "Member": "cnorris"
+    },
+    {
+        "Group": "Domain Admins",
+        "Member": "Helpdesk Admins"
+    },
+    {
+        "Group": "Helpdesk Admins",
+        "Member": "bwillis"
+    },
+    {
+        "Group": "Helpdesk",
+        "Member": "blee"
+    },
+    {
+        "Group": "Account Operators",
+        "Member": "Helpdesk"
+    }
+  ],
+  "Execute" : [
+      {
+          "Name": "No one can delegate chuck norris",
+          "cmd": "Get-ADUser cnorris | Set-ADUser -AccountNotDelegated $true"
+      },
+      {
+        "Name": "delegation permission",
+        "cmd": "$spn = 'CIFS/adsec-01.contoso.com'; Set-ADUser -Identity 'taskservice' -Add @{'msDS-AllowedToDelegateTo'=@($spn)}"
+    },
+    {
+        "Name": "delegation permission",
+        "cmd": "$spn = 'HTTP/adsec-01.contoso.com'; Set-ADUser -Identity 'taskservice' -Add @{'msDS-AllowedToDelegateTo'=@($spn)}"
+    },
+    {
+        "Name": "delegation permission",
+        "cmd": "$spn = 'HOST/adsec-01.contoso.com'; Set-ADUser -Identity 'taskservice' -Add @{'msDS-AllowedToDelegateTo'=@($spn)}"
+    },
+    {
+        "Name": "delegation permission",
+        "cmd": "$spn = 'RPCSS/adsec-01.contoso.com'; Set-ADUser -Identity 'taskservice' -Add @{'msDS-AllowedToDelegateTo'=@($spn)}"
+    },
+    {
+        "Name": "set spn for service account",
+        "cmd": "Set-ADUser -Identity 'taskservice' -Add @{'serviceprincipalName'=@('HTTP/task.contoso.com')}"
+    },
+    {
+        "Name": "Set delegation for taskservice",
+        "cmd": "Set-ADAccountControl -Identity 'taskservice' -TrustedToAuthForDelegation $true"
+    },
+    {
+        "Name": "Set nopreauth for svc.backup",
+        "cmd": "Set-ADAccountControl -Identity 'svc.backup' -DoesNotRequirePreAuth $true"
+    },
+    {
+        "Name": "Give taskservice access to GPOs",
+        "cmd": "$null = Set-GPPermission -All -TargetName 'taskservice' -TargetType Group -PermissionLevel GpoEdit -Replace"
+    }
+  ]
+  }
