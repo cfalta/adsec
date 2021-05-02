@@ -10,6 +10,6 @@ This repository contains an introductory class on Active Directory security. The
 
 ## Where to start?
 
-1. Go through the Lab Setup Guide to build a lab environment. Feel free to use the terraform scripts if you want to use Microsoft Azure.
+1. Go through the Lab Setup Guide to build a lab environment.
 2. Go through the slides. In the slides you will find references to the lab exercises at regular intervals. Go through the corresponding exercise to practice what you've learned until then.
 3. Go on :-) - this is an introductory class. There's a whole lot more craziness to explore in the wonderous world of Active Directory and we haven't event talked about AAD yet.
