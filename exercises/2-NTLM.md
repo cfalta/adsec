@@ -7,7 +7,7 @@ You can find all tools needed in the ["attacker-tools.zip"-file](../exercises/at
 Tools needed:
 
 - Mimikatz: [https://github.com/gentilkiwi/mimikatz](https://github.com/gentilkiwi/mimikatz)
-- PSExec: [http://live.sysinternals.com/](https://github.com/gentilkiwi/mimikatz)
+- PSExec: [http://live.sysinternals.com/](http://live.sysinternals.com/)
 
 ## Exercise
 
