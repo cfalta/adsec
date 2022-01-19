@@ -77,6 +77,17 @@ This script will populate AD with users, groups and OUs for the exercise.
 In this scenario, we assume that the user "john" and his client ADSEC-00 have been already compromised by the attacker. Please prepare ADSEC-00 as described below:
 
 1.	Download the [attacker-tools zip files](../exercises/attacker-tools) and extract the tools to `C:\attacker-tools` on ADSEC-00 (Note: the password is "infected"). 
-2.	Install neo4j community edition on ADSEC-00 (we’ll need this later for Bloodhound). The attacker-tools.zip contains a script called `install-neo4j.ps1`. Just run this with admin privileges and it will install neo4j and Firefox via the chocolatey package manager.
-3.	After successful installation, open Firefox and navigate to the neo4j web interface at [http://127.0.0.1:7474/browser/](http://127.0.0.1:7474/browser/). Log in with the default credentials (neo4j/neo4j) and choose a new password for the neo4j user. This step is mandatory, otherwise we can't use Bloodhound later on so make sure that you remember the password.
-4. You may also want to install a text editor of your choice.
+2.	Install dependencies: The attacker-tools.zip contains a script called `install-choco-and-dependencies.ps1`. Just run this with admin privileges and it will install python, neo4j and Firefox via the chocolatey package manager
+   ```
+   cat -raw .\install-choco-and-dependencies.ps1 | iex
+   ```
+3. Configure neo4j community edition (we’ll need this later for Bloodhound)
+   - After successful installation, open Firefox and navigate to the neo4j web interface at [http://127.0.0.1:7474/browser/](http://127.0.0.1:7474/browser/). 
+   - Log in with the default credentials (neo4j/neo4j) and choose a new password for the neo4j user. This step is mandatory, otherwise we can't use Bloodhound later on so make sure that you remember the password.
+4. Set up impacket (we'll need this later for NTLM relay). Open an administrative shell and run
+
+   ```
+   pip install pyreadline
+   pip install impacket
+   ```
+5. You may also want to install a text editor of your choice.
