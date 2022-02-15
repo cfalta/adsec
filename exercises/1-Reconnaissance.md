@@ -58,6 +58,7 @@ Get-DomainGroup | ? { $_.distinguishedname -notlike "*CN=Users*" -and $_.disting
 
 - How many computers are in the domain and what OS are they running on?
 - How many user objects are in the domain? Write a powershell query to list all user in table form showing only the attributes samaccountname, displayname, description and last password change.
-- Can you identify any custom admin groups? Change the powershell query above in a generic way so it only returns custom admin groups.
+- How many group objects are in the domain and who is a member of which group? Write a powershell query that stores the result in a csv file.
+- Think of simple ways to identify custom admin groups and get a list of only (!) those custom groups. Format the output as a table
 - Who is a member of the custom admin group you found and when was his password last set?
 - Think of simple ways to identify service accounts in the domain? Write a powershell query that lists all service accounts based on the pattern you came up with.
