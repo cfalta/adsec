@@ -4,7 +4,7 @@ This repository contains an introductory class on Active Directory security. The
 
 ## Content
 
-- [Slides](./slides/AD-Security-101.pptx) containing the theoretical stuff
+- [Slides](./slides/AD-Security-101.pdf) containing the theoretical stuff
 - [Lab Setup Guide](./lab-setup/README.md) containing instructions on how to setup a lab. Includes terraform scripts to automatically setup a lab in Microsoft Azure (not mandatory but speeds up the process if you are already familiar with Azure)
 - [Exercises](./exercises/README.md) to walk through and practice different attack vectors 
 
