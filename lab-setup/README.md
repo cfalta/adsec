@@ -88,6 +88,7 @@ In this scenario, we assume that the user "john" and his client ADSEC-00 have be
 
    ```
    pip install pyreadline
+   pip install dsinternals
    pip install impacket
    ```
 5. You may also want to install a text editor of your choice.
