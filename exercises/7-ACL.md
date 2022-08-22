@@ -43,9 +43,8 @@ Thats it. Now you can start your analysis by experimenting with the "Pre-Built A
 
 #### Questions
 
-- Mark the user "taskservice" as owned. Find an attack path that will allows us to take control of the domain controller using the user taskservice.
 - We got control over taskservice through kerberoasting but Bloodhound also shows you a different attack path. Which other user can manipulate the user taskservice? `Hint:` we got control over that user in the NTLM exercise
-- **Bonus Question:** find a way to exploit the attack path you just found and try to execute it in the lab environment.
+- Find a way to exploit the attack path you just found and try to execute it in the lab environment.
 
 ### Part 2 - GPO Exercise
 
